@@ -1,0 +1,33 @@
+import static java.lang.System.out;
+import java.util.Scanner;
+import java.util.Random;
+         
+public class GuessAgain {
+    public static void main(String args[]) {
+        Scanner keyboard = new Scanner(System.in);
+        
+        int numGuesses = 0;
+        int randomNumber = new Random().nextInt(10) + 1;
+        
+        out.println("     ************              ");
+        out.println("Welcome to the Gueesing Game :3");
+        out.println("     ************              ");
+        out.println();
+        
+        out.print(" Enter an int from 1 to 10: ");
+        int inputNumber = keyboard.nextInt();
+        numGuesses++;
+        
+        while (inputNumber != randomNumber) {
+            out.println();
+            out.println("try again...");
+            inputNumber = keyboard.nextInt();
+            numGuesses++;
+        }
+        out.print("you win after ");
+        out.println(numGuesses + "Guesses.");
+        
+        keyboard.close();
+    }
+    
+}
